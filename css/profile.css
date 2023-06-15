@@ -1,0 +1,40 @@
+/* Profile Content */
+.profile {
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+.profile .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.profile .container .info {
+  width: 100%;
+}
+.profile .container .box:nth-child(1) {
+  display: flex;
+  justify-content: center;
+}
+.profile .container .box label .img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #eee;
+  border: solid 1px #eee;
+  cursor: pointer;
+  transition: var(--trans);
+}
+.profile .container .box label .img:hover {
+  filter: grayscale(40%);
+}
+.profile .container .box .row_box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .profile .container,
+  .profile .container .box .row_box {
+    flex-direction: column;
+  }
+}

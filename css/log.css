@@ -1,0 +1,138 @@
+:root {
+  --trans: 0.4s;
+  --main-color: #b18e27;
+  --other-color: #99740487;
+  --border-10: 10px;
+}
+body {
+  background-color: var(--main-color);
+}
+
+/* Content From */
+a {
+  text-decoration: none;
+}
+.content {
+  position: relative;
+}
+.content .container .parent {
+  margin: 80px auto;
+  padding: 20px 25px;
+  background-color: #fff;
+  border-radius: var(--border-10);
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .container .parent .title_page {
+  color: #333;
+}
+.content .container .parent > a {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+.content .container .parent .img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+}
+.content .container .parent .box {
+  position: relative;
+  width: 70%;
+}
+.content .container .parent .box input {
+  padding: 15px 10px;
+  width: 100%;
+}
+.content .container .parent .box label {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  transition: var(--trans);
+}
+.label_top {
+  top: -50% !important;
+  transform: translateY(50%) !important;
+  background-color: #fff;
+  padding: 2px 5px;
+  border-radius: var(--border-10);
+  border: solid 1px #eee;
+}
+.content .container .parent .box #show {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+}
+.content .container .parent .img_box label {
+  cursor: pointer;
+  transition: var(--trans);
+}
+.content .container .parent .img_box label:hover {
+  opacity: 0.7;
+}
+.content .container .parent .btn {
+  background-color: var(--main-color);
+  color: #fff;
+  transition: var(--trans);
+  opacity: 0.9;
+}
+.content .container .parent .btn:hover {
+  opacity: 1;
+}
+.content .container .parent .text {
+  text-align: center;
+}
+.content .container .parent .text a {
+  color: #6b5618;
+  text-decoration: none;
+}
+.content .container .parent .text a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767px) {
+  .content .container .parent {
+    width: 100%;
+    margin: 20px auto;
+  }
+  .content .container .parent .box {
+    width: 100%;
+  }
+}
+
+.errors {
+  position: absolute;
+  top: 30px;
+  z-index: 1000000;
+  transition: var(--trans);
+  animation: show_error 0.7s 1 forwards linear,
+    hid_error 1s 2.5s 1 forwards linear;
+  opacity: 0;
+  min-width: 30%;
+}
+@keyframes show_error {
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  100% {
+    right: 20px;
+    opacity: 1;
+  }
+}
+@keyframes hid_error {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

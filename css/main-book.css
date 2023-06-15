@@ -1,0 +1,81 @@
+body {
+  background-color: var(--silver-color);
+}
+/* Section Add OR Edit Book */
+.content_main_book {
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+.content_main_book .container .parent {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .content_main_book .container .parent {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.content_main_book .container .parent .section {
+  width: 100%;
+}
+.content_main_book .container .parent input {
+  transition: var(--trans);
+}
+.content_main_book .container .parent .section:nth-child(1) {
+  max-width: 250px;
+}
+.content_main_book .container .parent .section .img {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  border-radius: var(--border-10);
+  background-color: #eee;
+  color: #999;
+  font-size: 1.3rem;
+  border: dashed 2px #9999;
+  cursor: pointer;
+  transition: var(--trans);
+}
+.content_main_book .container .parent .section .img:hover {
+  background-color: #ddd;
+  color: #666;
+}
+.content_main_book .container .parent .section .error {
+  font-size: 0.9rem;
+  padding-right: 10px;
+  color: red;
+}
+.content_main_book .container .parent .section .box .input_box {
+  position: relative;
+}
+.content_main_book .container .parent .section .box .input_box .input {
+  box-shadow: 0 0 5px 0 #ddd;
+  font-size: 0.9rem;
+  padding: 12px 10px;
+}
+.content_main_book .container .parent .section .box .input_box .bad_input {
+  border: solid 1px #ff00007a;
+  box-shadow: 0 0 5px 0 #ff00007a;
+}
+.content_main_book .container .parent .section .box .input_box .input:focus {
+  border: solid 1px var(--main-color);
+}
+
+.content_main_book .container .parent .section .box .input_box .title,
+.content_main_book .container .parent .section .box .input_box .title_textbox {
+  position: absolute;
+  top: -40%;
+  right: 10px;
+  padding: 2px 5px;
+  background-color: #fff;
+  border-radius: var(--border-10);
+  border: solid 1px #eee;
+}
+.content_main_book .container .parent .section .box .input_box .title_textbox {
+  top: -20%;
+}

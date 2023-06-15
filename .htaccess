@@ -1,0 +1,9 @@
+# Trasform Http To Https
+
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Transform To Error Page 404, 403
+
+ErrorDocument 404 https://popeathanasiuslibrary.infinityfreeapp.com/404.php
+ErrorDocument 403 https://popeathanasiuslibrary.infinityfreeapp.com/403.php

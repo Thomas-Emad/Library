@@ -1,0 +1,4 @@
+version php: 8.1.10
+version mysql: 8.0.30
+version Bootstrap: 5.3
+version Fontawesome: 6.4

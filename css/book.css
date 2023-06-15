@@ -1,0 +1,111 @@
+/* Content Book */
+body {
+  background-color: #eee;
+  font-family: "Amiri", serif;
+}
+.book {
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+.book .parent,
+.other_book .container .parent {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: var(--border-10);
+  box-shadow: 0 0 5px 0 var(--bs-border-color-translucent);
+  margin-bottom: 10px;
+}
+.title {
+  border-bottom: solid 3px var(--main-color);
+  width: fit-content;
+  padding-bottom: 5px;
+}
+.book .container .content {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.book .container .content .info {
+  width: 70%;
+}
+.book .container .content .info .box {
+  margin-top: 5px;
+  font-size: 1.3rem;
+}
+.book .container .content .info .box.edit {
+  display: flex;
+  gap: 10px;
+}
+.book .container .content .info .box.edit .btn {
+  width: 100%;
+  transition: var(--trans);
+}
+.book .container .content .img {
+  width: 300px;
+  height: 100%;
+  background-color: var(--main_book-color);
+  overflow: hidden;
+  border-radius: var(--border-10);
+  border: solid 2px #eee;
+}
+.book .container .content .img img {
+  width: 100%;
+  height: 100%;
+}
+.book .container .text {
+  position: relative;
+}
+.book .container .text .list {
+  font-size: 1.3rem;
+}
+@media (max-width: 767px) {
+  .book .container .content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .book .container .content .info .box.edit {
+    flex-direction: column;
+  }
+  .book .container .content .info {
+    width: 100%;
+  }
+  .book .container .content .img {
+    margin: 10px 0;
+  }
+}
+
+/* other_book Books */
+.other_book {
+  padding-bottom: 20px;
+}
+.other_book .container {
+  padding-bottom: 80px;
+}
+.other_book .container .box {
+  background-color: #fff;
+  border-radius: var(--border-10);
+  box-shadow: 0 0 5px 0 var(--bs-border-color-translucent);
+  overflow: hidden;
+  padding: 0;
+  width: fit-content;
+  text-align: center;
+  border-radius: var(--border-10);
+  transition: var(--trans);
+  text-decoration: none;
+}
+.other_book .container .box img {
+  width: 100%;
+  height: 350px;
+}
+.other_book .container .box .title_box {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.other_book .container .box .write {
+  font-style: italic;
+}
+.other_book .container .box p {
+  color: #333;
+  font-size: 1rem;
+  font-family: var(--bs-body-font-family);
+}

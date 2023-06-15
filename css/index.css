@@ -1,0 +1,247 @@
+/* Home Search Section */
+.search_home {
+  height: 500px;
+  background-color: var(--other-color);
+}
+.search_home .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  font-family: "Amiri", serif;
+}
+.search_home .container .box {
+  width: 80%;
+  margin-top: 40px;
+}
+.search_home .container .box h1 {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.search_home .container .box h2 {
+  font-style: italic;
+}
+.search_home .container .box .box_search {
+  position: relative;
+  background-color: #fff;
+  border-radius: var(--border-10);
+  padding: 15px 10px;
+  margin-top: 20px;
+}
+.search_home .container .box .box_search .icon_search {
+  position: absolute;
+  top: 48%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--other-color);
+  font-size: 1.2rem;
+}
+.search_home .container .box .box_search .btn_text {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-right: 30px;
+  font-family: inherit;
+}
+.search_home .container .box .box_search .btn_search {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  outline: none;
+  border: none;
+  background-color: var(--other-color);
+  color: #fff;
+  border-radius: var(--border-10);
+  padding: 5px 10px;
+  transition: var(--trans);
+}
+.search_home .container .box .box_search .btn_search:hover {
+  background-color: var(--main-color);
+}
+.search_home .container .box .buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.search_home .container .box .buttons .link {
+  padding: 7px 30px;
+  color: #fff;
+  border: solid 1px #fff;
+  border-radius: var(--border-10);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: var(--trans);
+}
+.search_home .container .box .buttons .link:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+@media (max-width: 767px) {
+  .search_home .container .box .buttons {
+    flex-direction: column;
+  }
+}
+
+/* info_sectionrmation About Site */
+.info_section {
+  background-color: #eee;
+  padding: 30px 0;
+}
+.info_section .container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.info_section .container .box {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: var(--trans);
+  opacity: 0.7;
+  cursor: pointer;
+}
+.info_section .container .box:hover {
+  opacity: 1;
+}
+.info_section .container .box .img_card {
+  width: 100px;
+}
+.info_section .container .box .title {
+  margin: 10px 0;
+  color: #333;
+}
+.info_section .container .box p {
+  color: #666;
+  text-align: center;
+}
+.info_section .container .box.logo {
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+}
+.info_section .container .box.logo .img_card {
+  width: 200px;
+}
+@media (max-width: 767px) {
+  .info_section .container {
+    flex-direction: column;
+  }
+  .info_section .container .box {
+    width: 100%;
+  }
+}
+
+/* Books */
+.famous_books {
+  background-color: #f1f1f1;
+  padding: 40px 0;
+  padding-bottom: 120px;
+  color: #333;
+  position: relative;
+}
+.famous_books .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.famous_books .container .box {
+  background-color: #fff;
+  width: 100%;
+  border-radius: var(--border-10);
+  padding: 10px;
+  box-shadow: 0 0 5px 0 var(--bs-border-color-translucent);
+}
+.famous_books .container .content_books {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 68%;
+  max-width: 100%;
+}
+.famous_books .container .info .title {
+  border-bottom: solid 2px var(--main-color);
+  width: fit-content;
+  padding-bottom: 10px;
+}
+.famous_books .container .content_books .info p {
+  margin: 5px;
+}
+.famous_books .container .content_books .info .say {
+  font-style: italic;
+  display: block;
+  text-align: left;
+}
+.famous_books .container .content_books .books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+.famous_books .container .content_books .books .box {
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  border-radius: var(--border-10);
+  overflow: hidden;
+  transition: var(--trans);
+}
+.famous_books .container .content_books .books .box:hover {
+  transform: translateY(-5px);
+}
+.famous_books .container .content_books .books .box .img {
+  max-width: 100%;
+  height: 350px;
+}
+.famous_books .container .content_books .books .box .text {
+  padding: 10px;
+}
+.famous_books .container .content_books .books .box .text .title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.famous_books .container .content_books .books .box .text .write {
+  font-style: italic;
+}
+
+.famous_books .container .books_sections {
+  width: 30%;
+  color: #333;
+  height: fit-content;
+}
+.famous_books .container .books_sections .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.famous_books .container .books_sections .info .icon {
+  font-size: 1.3rem;
+  color: #333;
+  text-decoration: none;
+}
+.famous_books .container .books_sections .parent .box {
+  color: #333;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  transition: var(--trans);
+}
+.famous_books .container .books_sections .parent .box:hover {
+  transform: translateY(-5px);
+  color: var(--main-color);
+}
+
+@media (max-width: 900px) {
+  .famous_books .container {
+    flex-direction: column;
+  }
+  .famous_books .container .books_sections {
+    width: 100%;
+  }
+}

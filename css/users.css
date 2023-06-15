@@ -1,0 +1,187 @@
+body {
+  background-color: var(--silver-color);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.users {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+/* Search Box */
+.users .container .search {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+  justify-content: center;
+}
+.users .container .search input {
+  outline: none;
+  border: none;
+  border-radius: var(--border-10);
+}
+.users .container .search .box {
+  position: relative;
+  background-color: #fff;
+  border-radius: var(--border-10);
+  padding: 15px;
+}
+.users .container .search .box:nth-child(1) {
+  min-width: 90%;
+}
+@media (max-width: 767px) {
+  .users .container .search .box:nth-child(1) {
+    min-width: 80%;
+  }
+}
+.users .container .search input[type="text"] {
+  padding-right: 35px;
+  width: 100%;
+}
+.users .container .search input[type="submit"] {
+  position: absolute;
+  background-color: var(--main-color);
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  color: #fff;
+}
+.users .container .search .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--main-color);
+}
+.users .container .search .box:nth-child(2) {
+  padding: 0;
+}
+.users .container .search .box .filter {
+  position: relative;
+  border-radius: var(--border-10);
+}
+.users .container .search .box .filter summary {
+  list-style: none;
+  padding: 15px;
+}
+.users .container .search .box .filter .inputs_rad {
+  position: absolute;
+  background-color: #eee;
+  overflow: hidden;
+  width: max-content;
+  right: 0;
+  border-radius: var(--border-10);
+  top: 110%;
+  z-index: 1200;
+  text-align: right;
+  font-size: 1.2rem;
+  box-shadow: 0 0 5px 0 var(--bs-border-color-translucent);
+}
+.users .container .search .box .filter .inputs_rad .box_select {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  transition: var(--trans);
+  overflow: hidden;
+}
+.users .container .search .box .filter .inputs_rad label {
+  width: 100%;
+  cursor: pointer;
+}
+.users .container .search .box .filter .inputs_rad .box_select:hover {
+  background-color: #fff;
+}
+/* result */
+.users .container .result .parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.users .container .result .parent .box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: var(--border-10);
+  padding: 5px;
+  transition: var(--trans);
+  cursor: pointer;
+}
+.users .container .result .parent .box:hover {
+  top: -5px;
+}
+.users .container .result .parent .box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+}
+.users .container .result .parent .box .text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.users .container .result .parent .box .text .title {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.users .container .result .parent .box .text .title .permissions {
+  font-size: 0.9rem;
+}
+.users .container .result .parent .box .text .icon {
+  color: inherit;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: var(--border-10);
+  transition: var(--trans);
+}
+.users .container .result .parent .box .text .icon:hover {
+  background-color: #eee;
+}
+.users .container .result .parent .box .text .list {
+  position: absolute;
+  left: -100px;
+  top: 100%;
+  padding: 0;
+  background-color: #fff;
+  border-radius: var(--border-10);
+  overflow: hidden;
+  width: 150px;
+  z-index: 1000;
+}
+.users .container .result .parent .box .text .list ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.users .container .result .parent .box .text .list ul li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: solid 1px #ddd;
+}
+.users .container .result .parent .box .text .list ul li:hover {
+  background-color: #ddd;
+}
+.modal-dialog {
+  top: 100px;
+}
+.box_shadow {
+  box-shadow: 0 0 5px 0 var(--bs-gray-400);
+}
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.msg {
+  text-align: center;
+  font-weight: bold;
+}
