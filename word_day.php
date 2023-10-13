@@ -58,9 +58,9 @@ if (isset($_POST['add_word'])) {
   }
 
   if (empty($errors)) {
-    $sql = $db->prepare("INSERT INTO `word_day` (`id`, `random_num`, `content`, `source`) 
-    VALUES (NULL, '$random_post', '$content', '$source')");
-    $sql->execute();
+    $sql = $db->prepare("INSERT INTO `word_day` (`id`, `random_num`, `content`, `source`, `status`) 
+    VALUES (NULL, ?, ?, ?, '0')");
+    $sql->execute([$random_post, $content, $source]);
     header("Refresh: 0");
   }
 }
@@ -199,7 +199,7 @@ if (isset($_POST['delete'])) {
       </div>
       <?php
       if (empty($words)) {
-        echo "<p class='msg'> قريبا, لا يوجد منشورات الان..</p>";
+        echo "<p class='msg'> قريبا, لا يوجد مقولات الان..</p>";
       }
       ?>
       <div id="pagination">

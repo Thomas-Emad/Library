@@ -5,7 +5,7 @@ body {
 }
 .word_day {
   margin-top: 100px;
-  margin-bottom: 50px;
+padding-bottom: 120px;
 }
 .word_day .container .add_word {
   display: flex;

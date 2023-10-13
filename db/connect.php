@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=ag-book";
+$dsn = "mysql:host=localhost;dbname=library";
 $user = 'root';
 $pass = '';
 

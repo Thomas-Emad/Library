@@ -4,7 +4,7 @@ body {
 /* Section Add OR Edit Book */
 .content_main_book {
   margin-top: 100px;
-  margin-bottom: 40px;
+  padding-bottom: 140px;
 }
 .content_main_book .container .parent {
   display: flex;

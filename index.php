@@ -3,8 +3,7 @@ include('db/connect.php');
 include("functions/permissions.php");
 
 // Get Word For To Day
-$date = date('z') + 1;
-$sql = $db->prepare("SELECT * FROM `word_day` WHERE id = (SELECT IFNULL((SELECT id FROM `word_day` LIMIT 1 OFFSET $date), (SELECT MAX(id) FROM `word_day`))) LIMIT 1;");
+$sql = $db->prepare("SELECT * FROM `word_day` WHERE status = '1' LIMIT 1;");
 $sql->execute();
 $word_day = $sql->fetch(PDO::FETCH_OBJ);
 

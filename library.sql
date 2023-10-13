@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 14, 2023 at 01:24 PM
+-- Generation Time: Oct 13, 2023 at 01:56 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ag-book`
+-- Database: `library`
 --
 
 -- --------------------------------------------------------
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `authors` (
   `id` int NOT NULL,
   `num` int NOT NULL,
-  `author` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `author` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `authors`
@@ -63,9 +63,42 @@ CREATE TABLE `books` (
   `position_book_sh` int DEFAULT NULL,
   `subjects` varchar(512) DEFAULT NULL,
   `visits` int NOT NULL,
-  `add_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `add_time` datetime DEFAULT CURRENT_TIMESTAMP,
   `famous` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `code`, `name`, `img`, `part_number`, `section`, `series`, `author`, `publisher`, `num_page`, `num_copy`, `unit_number`, `shelf_number`, `position_book_sh`, `subjects`, `visits`, `add_time`, `famous`) VALUES
+(1, '121', 'حياة التواضع و الوداعة', '', '', 'البابا شنودة الثالث', '', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 192, 2, 1, '2', 1, '', 8, '2023-06-14 21:49:52', 1),
+(2, '122', 'اللاهوت المقارن (الجزء الاول )', '', '1', 'البابا شنودة الثالث', '', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 174, 2, 4, '2', 2, 'الايمان وصحة التعليم - مجمل خلافاتنا مع البروتستانت - التقليد - الشفاعة - اكرام العذراء و دوام بتوليتها - الصوم - الحكم الالفي - المواهب و الالسنه - التوبه - وساطة الكنيسة - خلافات طقسية', 0, '2023-06-14 21:49:52', 0),
+(3, '123', 'الغضب', '', '', 'البابا شنودة الثالث', 'الحروب الروحية رفم 3', 'البابا شنودة الثالث ', 'مطبعة الانبا رويس', 128, 3, 1, '2', 3, 'الغضب المقدس - تاغضب الخاطئ الباطل- انواع و درجات الغضب - الاحتمال - اسباب الغضب - علاج الغضب', 1, '2023-06-14 21:49:52', 0),
+(4, '124', 'الحروب الروحية', '', '', 'البابا شنودة الثالث', 'الحروب الروحية رفم 2', 'البابا شنودة الثالث ', 'مطبعة الانبا رويس', 231, 1, 1, '2', 4, 'الحروب داخلك وخارجك - حرب الذات - الفراغ - التسيبات - الشك - الخوف - حروب الفكر - المظاهر الخارجيه- خطايا اللسان  - قساوة القلب- الفتور الروحي - حرب الكابة - العنف - محبة المديح و الكرامة ', 5, '2023-06-14 21:49:52', 1),
+(60, '126', 'مجموعة تاملات في اسبوع الالام ', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'مطبعة الانبا رويس', 237, 3, 1, '2', 6, 'اهمية الاسبوع - تامل في الالام المسيح - كيف نستفيد من هذا الاسبوع - تسبحه البصخه ', 0, '2023-06-14 22:02:25', 0),
+(61, '1261', 'لماذا القيامة ؟', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 8, 5, 1, '2', 61, 'القيامة معجزة ضرورية - القيامة هي قيامة الجسد - لماذا يهتم الله بالاجساد - القيامة هي الباب الموصل للسماء - القيامة و اعماقها الروحية', 0, '2023-06-14 22:02:25', 0),
+(62, '1262', '5', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'null', 96, 3, 1, '2', 62, 'حياة', 4, '2023-06-14 22:02:25', 1),
+(63, '1263', 'الوصايا العشر (الجزء الثاني) اكرم اباك وامك', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 48, 3, 1, '2', 63, 'الابوة الطبيعية و احترام الاقارب الكبار - كيف نكرم الاباء و الامهات - حول الطاعه و الخضوع - واجب الاباء نحو ابنائهم - حدود اكرام الوالدين - انواع اخري من الابوه', 0, '2023-06-14 22:02:26', 0),
+(64, '1264', 'الوصايا العشر (الوصايا الاربع الاولي)', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 63, 3, 1, '2', 64, 'كلمة عامة عن الوصايا العشر - الوصيه الاولي  (انا الرب الهك) - الوصيه الثانيه (لا تضع لك تمثالا منحوتا) - الوصيه الثالثه (لا تنطق باسم الرب الهك باطلا) - الوصيه الرابعه (اذكر يوم السبت لتقدسه)', 3, '2023-06-14 22:02:26', 1),
+(65, '1265', 'الوصايا العشر (لا تقتل)', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 48, 2, 1, '2', 65, 'القتل المباح - اهمية هذه الوصيه - انواع من القتل - القتل غير المباشر - قتل الروح - قتل الانسان لنفسه - اجابة اسئلة تتعلق بالموضوع', 3, '2023-06-14 22:02:26', 1),
+(66, '1266', 'الوصايا العشر (الوصايا الاربع الاخيرة)', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 63, 3, 1, '2', 66, 'الوصيه السابعه  (لا تزن) - الوصيه الثامنه (لاتسرق) الوصيه التاسعه(لا تشهد بالزور) - الوصيه العاشرة (لا تشتهي مما لقريبك)', 0, '2023-06-14 22:02:26', 0),
+(67, '1267', 'روحانية الصوم', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 8, 3, 1, '2', 67, 'اهمية الصوم - الصوم و الجسد - قدسوا صوما- فضائل و مشاعر مصاحبه للصوم - تدرايب اثناء الصوم', 0, '2023-06-14 22:02:26', 0),
+(68, '1268', 'ثمر الروح', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 96, 3, 1, '2', 68, 'ثمار الروح القدس ( المحبه - الفرح - السلام - اللطف - الصلاح - الايمان - الوداعة - التعفف )', 1, '2023-06-14 22:02:26', 0),
+(69, '1269', 'من هو الانسان', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 144, 3, 1, '2', 69, 'الانسان نفس و جسد و روح - طاقات الانسان و غرائزه - ما الذي يقود الانسان في حياته - العقل - الضمير - الجسد - القلب - الفكر - الروح الانسانية - الاراده - الحياه', 0, '2023-06-14 22:02:26', 0),
+(70, '127', 'عشرة مفاهيم', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 96, 3, 1, '2', 7, 'مفهوم القوة - مفهوم الحريه - مفهوم الراحه والتعب - مفهوم الطموح -مفهوم الخطية - مفهوم الحب و الصداقة - مفهوم العثرة - مفهوم الوداعة - مفهوم الحق و العدل - مفهوم المعرفة', 0, '2023-06-14 22:02:26', 0),
+(71, '1271', 'الرجاء', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'null', 188, 4, 1, '2', 71, 'null', 0, '2023-06-14 22:02:26', 0),
+(72, '1272', 'الروح القدس و عمله فينا', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'null', 128, 1, 1, '2', 72, 'null', 0, '2023-06-14 22:02:26', 0),
+(73, '1273', 'لاهوت المسيح', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 111, 3, 1, '2', 73, 'null', 0, '2023-06-14 22:02:26', 0),
+(74, '1274', 'بدع حديثة', 'null', 'null', 'البابا شنودة الثالث', 'اللاهوت المقارن', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 223, 3, 1, '2', 74, 'null', 0, '2023-06-14 22:02:26', 0),
+(75, '1275', 'تاملات في العظة علي الجبل', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 144, 1, 1, '2', 75, 'null', 0, '2023-06-14 22:02:26', 0),
+(76, '1276', 'تاملات في العظة علي الجبل ( طبعة جديده)', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 328, 1, 1, '2', 76, 'null', 0, '2023-06-14 22:02:26', 0),
+(77, '1277', 'تاملات في يوم الجمعة العظيمة', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 61, 1, 1, '2', 77, 'null', 0, '2023-06-14 22:02:27', 0),
+(78, '1278', 'تاملات في يوم خميس العهد ', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'null', 64, 1, 1, '2', 78, 'null', 0, '2023-06-14 22:02:27', 0),
+(79, '1279', 'حروب الشياطين ', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'null', 12, 1, 1, '2', 79, 'null', 0, '2023-06-14 22:02:27', 0),
+(80, '128', 'انطلاق الروح', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 151, 3, 1, '2', 8, 'null', 0, '2023-06-14 22:02:27', 0),
+(81, '1281', 'الذات (الانا)', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'الكلية الاكليريكية', 96, 1, 1, '2', 81, 'null', 0, '2023-06-14 22:02:27', 0),
+(82, '1282', 'الهدوء', 'null', 'null', 'البابا شنودة الثالث', 'null', 'البابا شنودة الثالث ', 'null', 128, 1, 1, '2', 82, 'null', 0, '2023-06-14 22:02:27', 0);
 
 -- --------------------------------------------------------
 
@@ -77,11 +110,11 @@ CREATE TABLE `publications` (
   `id` int NOT NULL,
   `post_random` int NOT NULL,
   `username` int NOT NULL,
-  `img` varchar(255) NOT NULL,
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `time_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `market` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -92,8 +125,8 @@ CREATE TABLE `publications` (
 CREATE TABLE `publishers` (
   `id` int NOT NULL,
   `num` int NOT NULL,
-  `publisher` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `publisher` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `publishers`
@@ -112,9 +145,9 @@ INSERT INTO `publishers` (`id`, `num`, `publisher`) VALUES
 CREATE TABLE `shelf` (
   `id` int NOT NULL,
   `unit_number` int NOT NULL,
-  `shelf_name` varchar(255) NOT NULL,
+  `shelf_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `shelf_number` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `shelf`
@@ -246,6 +279,13 @@ CREATE TABLE `users` (
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `name`, `email`, `phone`, `password`, `img`, `permissions`, `birthday`, `create_at`) VALUES
+(44, 230614653, 'توماس', 'tomtom22006@gmail.com', '01112638680', '123456', '', 'owner', '2023-06-03 21:00:00', '2023-06-14 15:20:38');
+
 -- --------------------------------------------------------
 
 --
@@ -255,9 +295,20 @@ CREATE TABLE `users` (
 CREATE TABLE `word_day` (
   `id` int NOT NULL,
   `random_num` int NOT NULL,
-  `content` varchar(500) NOT NULL,
-  `source` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `status` int NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `word_day`
+--
+
+INSERT INTO `word_day` (`id`, `random_num`, `content`, `source`, `status`) VALUES
+(8, 231346321, 'المتواضعون كالصخرة، تنزل إلى أسفل، ولكنها ثابتة وراسخة.. أما المتكبرون فإنهم كالدخان يعلو إلى فوق ويتسع. وفيما هو يعلو ويتسع، يضمحل ويتبدد..', 'القديس أغسطينوس', 0),
+(9, 231393139, 'تواضع القلب يتقدم الفضائل كلها. كما أن الكبرياء أساس الشرور كلها.', 'الأنبا موسى', 1),
+(10, 231315594, 'الذي يعرف خطاياه، خير له من نفعه الخليقة كلها بمنظره. والذي يتنهد كل يوم على نفسه بسبب خطاياه، خير من أن يقيم الموتى.. والذي استحق أن يبصر خطاياه، خير له من أن يبصر ملائكة.', 'مار اسحق', 0),
+(11, 231333297, 'كما أن الأرض لا تسقط لأنها كائنة إلى أسفل، هكذا من يضع نفسه لا يسقط', 'أنبا بيمن', 0);
 
 --
 -- Indexes for dumped tables
@@ -334,7 +385,7 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `publications`
@@ -364,13 +415,13 @@ ALTER TABLE `unit`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `word_day`
 --
 ALTER TABLE `word_day`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
@@ -387,6 +438,17 @@ ALTER TABLE `publications`
 --
 ALTER TABLE `shelf`
   ADD CONSTRAINT `shelf_ibfk_1` FOREIGN KEY (`unit_number`) REFERENCES `unit` (`num`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `words_day` ON SCHEDULE EVERY 24 DAY STARTS '2023-10-13 12:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+UPDATE `word_day` SET `status` = '0';
+UPDATE `word_day` SET `status` = '1' ORDER BY RAND() LIMIT 1;
+END$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
